@@ -1,7 +1,7 @@
 
 local DiscordLib = loadstring(game:HttpGet"https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/discord%20lib.txt")()
-local win = DiscordLib:Window("discord library")
-local serv = win:Server("TestHub", "")
+local win = DiscordLib:Window("TestHub")
+local serv = win:Server("RoFruit2", "")
 local drops = serv:Channel("Main")
 drops:Toggle("Auto Farm Chest OP",false,function(v)
 getgenv().chest = v
