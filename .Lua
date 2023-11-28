@@ -1,8 +1,8 @@
 
 local DiscordLib = loadstring(game:HttpGet"https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/discord%20lib.txt")()
 local win = DiscordLib:Window("discord library")
-local serv = win:Server("Preview", "")
-local drops = serv:Channel("Players")
+local serv = win:Server("TestHub", "")
+local drops = serv:Channel("Main")
 drops:Toggle("Farm Chest",false,function(v)
 getgenv().chest = v
 while chest do wait()
