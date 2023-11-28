@@ -3,7 +3,7 @@ local DiscordLib = loadstring(game:HttpGet"https://raw.githubusercontent.com/daw
 local win = DiscordLib:Window("discord library")
 local serv = win:Server("TestHub", "")
 local drops = serv:Channel("Main")
-drops:Toggle("Farm Chest",false,function(v)
+drops:Toggle("Auto Farm Chest OP",false,function(v)
 getgenv().chest = v
 while chest do wait()
 pcall(function()
