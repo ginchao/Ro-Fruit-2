@@ -5,28 +5,23 @@ local serv = win:Server("RoFruit2", "")
 local drops = serv:Channel("Main")
 drops:Toggle("Auto Farm Chest OP",false,function(v)
 getgenv().chest = v
-while chest do wait()
+while chest do task.wait()
 pcall(function()
+
 for i, v in pairs(game:GetService("Workspace").Chest.Chest1:GetChildren()) do
 if v.Name == "Head" then
 game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame*CFrame.new(0,7,0)
-wait(.1)
+wait(.2)
 fireproximityprompt(v.ProximityPrompt)
 else
 end
 for i, c in pairs(game:GetService("Workspace").Chest:GetChildren()) do
 if c:IsA("Model") then
 game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = c.Body.CFrame*CFrame.new(0,7,0)
-wait(.1)
+wait(.2)
 fireproximityprompt(c.Head.ProximityPrompt)
-else
-end
-for i, f in pairs(game:GetService("Workspace").Chest:GetChildren()) do
-if f:IsA("Model") then
-game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = f.Body.CFrame*CFrame.new(0,7,0)
-wait(.1)
-fireproximityprompt(f.Head.ProximityPrompt)
-end
+task.wait()
+fireproximityprompt(c.Head.ProximityPrompt, 0)
 end
 end
 end
