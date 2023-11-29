@@ -28,10 +28,11 @@ end
 end)
 end
 end)
-drops:Toggle("Auto Use Skill And Aim Mob",false,function(v)
+drops:Toggle("Auto Use Skill And Aim Mob LAG",false,function(v)
 getgenv().autoskill = v
 while autoskill do wait()
 pcall(function()
+wait()
 for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
 if v:IsA("Tool") then 
 for i, c in pairs(game:GetService("Workspace")._Mob:GetChildren()) do
