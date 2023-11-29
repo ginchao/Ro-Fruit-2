@@ -1,5 +1,5 @@
 
-local DiscordLib = loadstring(game:HttpGet"https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/discord%20lib.txt")()
+  local DiscordLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/ginchao/Discord-Lib/main/Discord-Lib'))()  
 local win = DiscordLib:Window("TestHub")
 local serv = win:Server("RoFruit2", "")
 local drops = serv:Channel("Main")
