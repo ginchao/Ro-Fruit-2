@@ -28,6 +28,38 @@ end
 end)
 end
 end)
+drops:Toggle("Auto Use Skill And Aim Mob",false,function(v)
+getgenv().autoskill = v
+while autoskill do wait()
+pcall(function()
+for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+if v:IsA("Tool") then 
+for i, c in pairs(game:GetService("Workspace")._Mob:GetChildren()) do
+if c:FindFirstChild("Humanoid") and c.Humanoid.Health > 0 and (v.Parent.HumanoidRootPart.Position - c.HumanoidRootPart.Position).Magnitude < 130  then
+local a = {"_Z","_X","_C","_V","Z","C","V","X"}
+for _, s in ipairs(a) do
+local args = {
+    [1] = v.Name..s,
+    [2] = "Start",
+    [3] = c.HumanoidRootPart.Position+Vector3.new()
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Document"):WaitForChild("DevilFruit_Event"):WaitForChild("OneEvent"):FireServer(unpack(args))
+local args = {
+    [1] = v.Name..s,
+    [2] = "Stop",
+    [3] = c.HumanoidRootPart.Position+Vector3.new()
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Document"):WaitForChild("DevilFruit_Event"):WaitForChild("OneEvent"):FireServer(unpack(args))
+end
+end
+end
+end
+end
+end)
+end
+end)
         local sldrs = serv:Channel("Walk Speed")   
 local spd = nil
     local sldr = sldrs:Slider("Speeds", 0, 1000, 0, function(v)    
