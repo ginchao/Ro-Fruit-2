@@ -28,7 +28,7 @@ end
 end)
 end
 end)
-drops:Toggle("Auto Farm ChestV",false,function(v)
+drops:Toggle("Auto Farm ChestV2",false,function(v)
 getgenv().chestv2 = v
 while chestv2 do
 pcall(function()
@@ -44,21 +44,6 @@ end
 wait(12)
 end)
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 end)
 drops:Toggle("Auto Use Skill And Aim Mob LAG",false,function(v)
 getgenv().autoskill = v
