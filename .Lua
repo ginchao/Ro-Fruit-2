@@ -3,7 +3,7 @@
 local win = DiscordLib:Window("TestHub")
 local serv = win:Server("RoFruit2", "")
 local drops = serv:Channel("Main")
-drops:Toggle("Auto Farm Chest OP",false,function(v)
+drops:Toggle("Auto Farm Chest ",false,function(v)
 getgenv().chest = v
 while chest do task.wait()
 pcall(function()
@@ -27,6 +27,38 @@ end
 end
 end)
 end
+end)
+drops:Toggle("Auto Farm ChestV",false,function(v)
+getgenv().chestv2 = v
+while chestv2 do
+pcall(function()
+che = game:GetService("Workspace").Chest:GetChildren()
+for i = 1, #che do
+local v = che[i]
+if v.Name ~= "NormalChest" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Head.CFrame*CFrame.new(0,7,0)
+task.wait(.2)
+fireproximityprompt(v.Head.ProximityPrompt)
+end
+end
+wait(12)
+end)
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 end)
 drops:Toggle("Auto Use Skill And Aim Mob LAG",false,function(v)
 getgenv().autoskill = v
